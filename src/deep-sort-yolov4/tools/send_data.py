@@ -2,9 +2,11 @@ import json
 import collections as cl
 from timeit import time
 import pika
+import uuid
 
 def create_jsondata(_camera_ip, _date, _dt, _car_data, _create_json_flag, _json_path, _i):
     _data = {}
+    _data["id"] = uuid.uuid4()
     _data["IP"] = _camera_ip,
     _data["date"] = _date,
     _data["data"] = _car_data
