@@ -115,7 +115,7 @@ def main(yolo):
         mask = Image.open(args.maskdir + 'mask' + args.ipaddress[-1] + '.png').convert("L").resize(size=(int(width), int(height)), resample=Image.NEAREST)
 
     while True:
-        nowtime = datetime.datetime.now(timezone('Asia/Tokyo')).strftime('%Y-%m-%d %H:%M:%S.%f')
+        nowtime = datetime.datetime.now(timezone('Asia/Tokyo')).strftime('%Y-%m-%d %H:%M:%S.%f%z')
         ret, frame = video_capture.read()  # frame shape 640*480*3
         if not ret:
             print('cant read')

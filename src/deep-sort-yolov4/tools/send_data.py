@@ -6,13 +6,14 @@ import uuid
 
 def create_jsondata(_camera_ip, _date, _dt, _car_data, _create_json_flag, _json_path, _i):
     _data = {}
-    _data["id"] = uuid.uuid4()
+    _data["id"] = str(uuid.uuid4())
     _data["IP"] = _camera_ip,
     _data["date"] = _date,
     _data["data"] = _car_data
     _data["dt"] = _dt
     if _create_json_flag:
-        create_dummy_data(_data, _json_path, _i) 
+        create_dummy_data(_data, _json_path, _i)
+    print(_data)
     return json.dumps(_data)
 
 def create_dummy_data(_data, _path, _i):
