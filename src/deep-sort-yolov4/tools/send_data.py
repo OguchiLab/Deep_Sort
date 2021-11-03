@@ -8,7 +8,7 @@ def create_jsondata(_camera_ip, _date, _dt, _car_data, _create_json_flag, _json_
     _data = {}
     _data["id"] = str(uuid.uuid4())
     _data["IP"] = _camera_ip,
-    _data["date"] = _date,
+    _data["date"] = _date + '+09:00',
     _data["data"] = _car_data
     _data["dt"] = _dt
     if _create_json_flag:
